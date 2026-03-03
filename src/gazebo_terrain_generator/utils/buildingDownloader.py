@@ -6,8 +6,8 @@ from pathlib import Path
 from typing import List, Tuple, Dict, Any
 from shapely.geometry import shape, mapping
 from shapely.ops import unary_union
-from utils.param import globalParam
-from utils.maptileUtils import maptile_utiles
+from gazebo_terrain_generator.utils.param import globalParam
+from gazebo_terrain_generator.utils.maptileUtils import maptile_utiles
 import mercantile
 from multiprocessing import Pool, cpu_count
 

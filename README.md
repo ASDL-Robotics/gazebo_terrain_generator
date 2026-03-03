@@ -62,8 +62,8 @@ export GAZEBO_WORLD_PATH="~/Desktop/gazebo_models/worlds"
 
 **Default Location**: If no environment variable is set, model and worlds files are saved to:
 ```
-Models saved in **~/gazebo_terrian_generator/output/gazebo_terrain/**
-World files in **~/gazebo_terrian_generator/output/gazebo_terrain/worlds**
+Models saved in **~/gazebo_terrain_generator/output/gazebo_terrain/**
+World files in **~/gazebo_terrain_generator/output/gazebo_terrain/worlds**
 
 ```
 
@@ -88,7 +88,7 @@ Generated model follow this structure:
 
 ## 🚀 Run Gazebo World Generator
 
-1. Navigate to **gazebo_terrian_generator** and start the applciation.
+1. Navigate to **gazebo_terrain_generator** and start the applciation.
     ```bash
     source terrain_generator/bin/activate
     python scripts/server.py
@@ -129,7 +129,7 @@ Test the installation with provided sample worlds:
 
 1. **Export the sample gazebo model path**:
     ```bash
-    export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:~/gazebo_terrian_generator/sample_worlds
+    export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:~/gazebo_terrain_generator/sample_worlds
     ```
 
 2. **Launch sample world**:

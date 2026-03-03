@@ -7,13 +7,13 @@ import uuid
 import base64
 from pathlib import Path
 import mimetypes
-from utils.demTilesDownloader import download_dem_data
-from utils.buildingDownloader import download_steetmap_data
-from utils.fileWriter import FileWriter
-from utils.utils import Utils
-from utils.gazeboWorldGenerator import GazeboTerrianGenerator
-from utils.maptileUtils import maptile_utiles
-from utils.param import globalParam
+from gazebo_terrain_generator.utils.demTilesDownloader import download_dem_data
+from gazebo_terrain_generator.utils.buildingDownloader import download_steetmap_data
+from gazebo_terrain_generator.utils.fileWriter import FileWriter
+from gazebo_terrain_generator.utils.utils import Utils
+from gazebo_terrain_generator.utils.gazeboWorldGenerator import GazeboTerrainGenerator
+from gazebo_terrain_generator.utils.maptileUtils import maptile_utiles
+from gazebo_terrain_generator.utils.param import globalParam
 import requests
 import mercantile
 app = Flask(__name__)
@@ -43,8 +43,8 @@ def process_end_download(bounds, zoom_level, outputDirectory, outputFile, filePa
 			print("Starting building data download...")
 			download_steetmap_data(true_boundaries, globalParam.BUILDING_PATH,model_path)
 
-		terrian_generator = GazeboTerrianGenerator(orthodir_path,include_buildings)
-		terrian_generator.generate_gazebo_world()
+		terrain_generator = GazeboTerrainGenerator(orthodir_path,include_buildings)
+		terrain_generator.generate_gazebo_world()
 		task_status["status"] = "completed"
 		print("Gazebo world generation completed successfully.")
 
@@ -189,9 +189,12 @@ def serve_static(path):
 	mime_type, _ = mimetypes.guess_type(path)
 	return send_from_directory(file_dir, path, mimetype=mime_type)
 
-if __name__ == '__main__':
-	
+
+def main():
 	if not validate_mapbox_key(globalParam.MAPBOX_API_KEY):
 		exit(1)
 	print("Starting Flask server...")
 	app.run(host='0.0.0.0', port=8080, threaded=True)
+
+if __name__ == '__main__':
+	main()

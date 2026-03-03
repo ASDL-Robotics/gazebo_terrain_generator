@@ -2,9 +2,9 @@
 import numpy as np
 import cv2
 import os
-from utils.maptileUtils import maptile_utiles
+from gazebo_terrain_generator.utils.maptileUtils import maptile_utiles
 from multiprocessing import Pool, cpu_count
-from utils.param import globalParam
+from gazebo_terrain_generator.utils.param import globalParam
 
 def fetch_image_from_url(url : str):
     """

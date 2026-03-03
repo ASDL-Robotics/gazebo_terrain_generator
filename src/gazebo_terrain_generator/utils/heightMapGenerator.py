@@ -5,9 +5,9 @@ import math
 from PIL import Image
 from multiprocessing import Pool, cpu_count
 
-from utils.maptileUtils import maptile_utiles
-from utils.utils import ConcatImage
-from utils.param import globalParam
+from gazebo_terrain_generator.utils.maptileUtils import maptile_utiles
+from gazebo_terrain_generator.utils.utils import ConcatImage
+from gazebo_terrain_generator.utils.param import globalParam
 
 
 class HeightmapGenerator(ConcatImage):

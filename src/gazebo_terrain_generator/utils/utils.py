@@ -10,7 +10,7 @@ import ssl
 import os
 import cv2
 import math
-from utils.param import globalParam
+from gazebo_terrain_generator.utils.param import globalParam
 from PIL import Image
 
 class Utils:

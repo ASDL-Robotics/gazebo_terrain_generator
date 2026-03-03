@@ -1,7 +1,7 @@
 import os
 import json
 import shutil
-from utils.param import globalParam
+from gazebo_terrain_generator.utils.param import globalParam
 
 
 
@@ -163,7 +163,7 @@ class FileWriter:
 		
 	
 	@staticmethod
-	def write_config_file(config_template, model_name,path,description="Gazebo 3d Terrian"):
+	def write_config_file(config_template, model_name,path,description="Gazebo 3d Terrain"):
 		'''
         Write a configuration file with the provided template and model details.
 
@@ -171,7 +171,7 @@ class FileWriter:
             config_template (str): The template content for the configuration file.
             model_name (str): The name of the model.
             path (str): The directory path to save the configuration file.
-            description (str, optional): The description of the model. Defaults to "Gazebo 3d Terrian".
+            description (str, optional): The description of the model. Defaults to "Gazebo 3d Terrain".
 
         Returns:
             None

@@ -2,12 +2,12 @@ import os
 import cv2
 import shutil
 import json
-from utils.fileWriter import FileWriter
-from utils.param import globalParam
-from utils.maptileUtils import maptile_utiles
-from utils.buildingsGenerator import GeoJSONToDAE
-from utils.heightMapGenerator import HeightmapGenerator
-from utils.utils import ConcatImage
+from gazebo_terrain_generator.utils.fileWriter import FileWriter
+from gazebo_terrain_generator.utils.param import globalParam
+from gazebo_terrain_generator.utils.maptileUtils import maptile_utiles
+from gazebo_terrain_generator.utils.buildingsGenerator import GeoJSONToDAE
+from gazebo_terrain_generator.utils.heightMapGenerator import HeightmapGenerator
+from gazebo_terrain_generator.utils.utils import ConcatImage
 from geopy.distance import geodesic
 from geopy.distance import distance
 from geopy.point import Point
@@ -68,7 +68,7 @@ class OrthoGenerator(ConcatImage):
 
 
 
-class GazeboTerrianGenerator(HeightmapGenerator,OrthoGenerator):
+class GazeboTerrainGenerator(HeightmapGenerator,OrthoGenerator):
     def __init__(self,tile_path:str,include_buildings: bool,**kwargs):
         super().__init__(**kwargs)
         self.tile_path = tile_path
